@@ -3,8 +3,10 @@ import TimeTable from "./TimeTable";
 
 const App = () => (
   <React.Fragment>
-    <h2>Next stop...</h2>
-    <h1>Great Portland Street</h1>
+    <header>
+      <h4>Next stop</h4>
+      <h1>Great Portland Street</h1>
+    </header>
     <TimeTable />
   </React.Fragment>
 );
