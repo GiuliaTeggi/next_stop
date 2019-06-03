@@ -1,6 +1,6 @@
 # Next Stop :metro:
 
-A small single page application that displays the next trains due to arrive at any London tube station.
+A small single page application that displays the next trains due to arrive at any London tube station, using the Transport for London API.
 
 ## How to run the app locally
 
