@@ -1,6 +1,6 @@
-# Next Stop Great Portland Street :metro:
+# Next Stop :metro:
 
-A small single page application that displays the next trains due to arrive at Great Portland Street underground station.
+A small single page application that displays the next trains due to arrive at any London tube station.
 
 ## How to run the app locally
 
@@ -12,4 +12,4 @@ A small single page application that displays the next trains due to arrive at G
 
 ## Live version
 
-The app is deployed at https://nextstopgreatportlandstreet.netlify.com/
+The app is deployed at https://nextstop.netlify.com/
