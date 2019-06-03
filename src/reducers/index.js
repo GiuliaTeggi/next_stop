@@ -2,7 +2,6 @@ import { ActionTypes } from "../components/actions";
 import { sortResultsByField } from "../utils";
 
 const initialState = {
-  isLoading: false,
   stations: [],
   trains: [],
   ascendingOrder: false,
