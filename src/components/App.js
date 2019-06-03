@@ -1,14 +1,21 @@
 import React from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { default as rootReducer } from "../reducers";
+import { Provider } from "react-redux";
 import TimeTable from "./TimeTable";
+import StationFilter from "./StationFilter";
+import Header from "./Header";
+
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 const App = () => (
-  <React.Fragment>
-    <header>
-      <h4>Next stop</h4>
-      <h1>Great Portland Street</h1>
-    </header>
+  <Provider store={store}>
+    <Header />
+    <StationFilter />
     <TimeTable />
-  </React.Fragment>
+  </Provider>
 );
 
 export default App;

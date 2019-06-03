@@ -1,16 +1,24 @@
 
 body{
   --white: #ffffff;
-  --red: #d3232a;
-  --blue: #2897ff;
   --purple: #c8b2ff;
   --pink:  #ffcee8;
   --yellow: #fce899;
-  --grey:  #f1f1f1;
-  
-  --border-radius: 5px;
+  --grey: #c9c9c9;
+  --brown: #aa9786;
+  --red: #ff4949;
+  --green: #72af6d;
+  --black: #3c3d3c;
+  --blue: #5959ff;
+  --light-blue: #82d9ff;
+  --teal: #add6ce;
+
+  --light-grey:  #f1f1f1;
+  --red-title: #d3232a;
+  --blue-tube: #0019a8;
+
   margin: 0;
-  background-color: var(--grey);
+  background-color: var(--light-grey);
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 16px;
   }
@@ -18,60 +26,258 @@ body{
   header{
     padding: 1rem;
     text-align: center;
-    color: var(--red);
+    color: var(--red-title);
   }
-  
+
+  form {
+    margin: 0 auto 2rem;
+    max-width: 300px;
+  }
+
+  form input {
+    width: 300px;
+    height: 20px;
+    padding: 0.5rem;
+    position: relative
+  }
+
+  form ul {
+    width: 320px;
+    position: absolute;
+    z-index: 1;
+    list-style-type: none;
+    background: var(--white);
+    cursor: pointer;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 0;
+    box-shadow: 0px 2px 3px 0px var(--grey);
+  }
+
+  form ul li {
+    padding: 0.5rem 0.3rem;
+  }
+
+  form ul li:hover{
+    background-color: var(--light-grey)
+  }
+ 
   section{
   padding: 1rem 2rem;
   background-color: var(--white);
   max-width: 1000px;
   margin: 0 auto 3em;
-  border-radius: var(--border-radius)
+  border-radius: 5px;
+  }
+
+  button {
+    cursor: pointer;
+    background: var(--blue-tube);
+    color: var(--white);
+  }
+
+  button p {
+    margin: 0 0.5rem 0 0;
+  }
+
+  button.reload-button{
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border: none;
   }
   
-  
-table {
+  table {
     background: var(--white);
-    width: 100%;
+    table-layout: fixed;
+    width: 650px;
+    margin: 0 auto;
     border-collapse: collapse;
     text-align: left;
     margin-top: 1rem;
   }
   
-  table thead th {
+  thead th {
     font-weight: normal;
-    color: var(--blue);
+    color: var(--blue-tube);
     padding: 0.5rem;
   }
 
-  table thead h4 {
+  thead th:first-of-type{
+    width: 100px;
+  }
+
+  thead th:nth-of-type(2){
+    width: 200px;
+  }
+
+  thead h4 {
     display: inline-block;
     margin-right: 1rem;
     font-weight: normal;
     margin-bottom: 0.5rem;
+  }
+
+  thead button.sort-button {
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: none;
+  }
+
+  thead button.sort-button img {
+    vertical-align: middle;
+  }
+
+  table tbody tr {
+    height: 40px;
+  }
+
+  table tbody tr:hover{
+    background-color: var(--light-grey);
   }
   
   table td {
     padding: 0.3rem 0.5rem;
   }
 
-  table td span.yellow{
+  tbody td span {
+    padding: 0 0.5rem;
+    border-radius: 5px;
+  }
+
+  td span.yellow{
     background-color: var(--yellow);
   }
 
-  table td span.purple{
+  td span.purple{
     background-color: var(--purple);
   }
 
-  table td span.pink{
+  td span.pink{
   background-color: var(--pink);
 }
 
-  button {
-    background-color: transparent;
-    cursor: pointer;
+  td span.grey{
+  background-color: var(--grey);
+}
+
+  td span.brown{
+  background-color: var(--brown);
+}
+
+  td span.red{
+  background-color: var(--red);
+}
+
+td span.green{
+  background-color: var(--green);
+}
+
+td span.black{
+  background-color: var(--black);
+  color: var(--white);
+}
+
+td span.grey{
+  background-color: var(--grey);
+}
+
+td span.blue{
+  background-color: var(--blue);
+}
+
+td span.light-blue{
+  background-color: var(--light-blue);
+}
+
+td span.teal{
+  background-color: var(--teal);
+}
+
+@media all and (max-width: 720px){
+  form input{
+    width: 250px;
   }
 
-  button p {
-    margin-bottom: 0.5rem;
+  form ul {
+    width: 270px;
+    font-size: 14px;
   }
+
+  section{
+    padding: 1rem;
+    font-size: 14px;
+  }
+
+  table, thead, tbody {
+    display: block;
+  }
+
+  table{
+    width: 100%;
+  }
+
+  thead tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  thead tr th:first-of-type, thead tr th:nth-of-type(2) {
+    width: auto;
+  }
+
+  thead th{
+    flex: 1;
+  }
+
+  table tbody tr{
+    width: 100%;
+    display: flex;
+    height: 50px;
+  }
+
+  tbody tr td{
+    flex: 1;
+  }
+}
+
+@media all and (max-width: 620px){
+
+  table thead{
+    display: none;
+  }
+
+  table tbody tr, tbody tr td{
+    display: block;
+  }
+
+  table tbody tr{
+    height: auto;
+    border-bottom: 2px solid var(--light-grey); 
+    padding: 0.5rem 0;
+  }
+
+  tbody tr {
+    position: relative;
+  }
+
+  tbody tr td{
+    padding-left: 150px;
+  }
+
+  tbody tr td:before{
+    position: absolute;
+    padding-right: 40px;
+    white-space: nowrap;
+    margin-left: -150px;
+  }
+
+  tbody tr td:nth-of-type(1):before { content: "Due"; }
+  tbody tr td:nth-of-type(2):before { content: "Destination"; }
+  tbody tr td:nth-of-type(3):before { content: "Line"; }
+  tbody tr td:nth-of-type(4):before { content: "Platform";}
+
+}
